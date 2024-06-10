@@ -584,7 +584,7 @@ dependencies = [
 
 [[package]]
 name = "discord-custom-rpc"
-version = "0.0.0"
+version = "0.0.1"
 dependencies = [
  "discord-rpc-client",
  "serde",

@@ -1,13 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
-use std::time::{Duration, Instant}; 
+use std::time::Duration; 
 use std::thread;
-
 use discord_rpc_client::{Client, Event};
-
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
 
 #[derive(serde::Deserialize)]
 struct RpcData {
@@ -28,11 +22,9 @@ fn update_discord_rpc(rpc_data: RpcData) {
         println!("ready?");
     });
 
-
     drpc.on_event(Event::Ready, |_| {
         println!("READY!");
     });
-
 
     drpc.start();
     drpc.set_activity(|act| act
@@ -46,15 +38,12 @@ fn update_discord_rpc(rpc_data: RpcData) {
                 .large_text(&rpc_data.large_text)
                 .small_image(&rpc_data.small_image)
                 .small_text(rpc_data.small_text.clone())
-            )).expect("RPC 설정 에러");
-       
-            
+            )).expect("RPC 설정 에러");     
     thread::sleep(Duration::from_secs(10));
 }
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
         .invoke_handler(tauri::generate_handler![update_discord_rpc])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

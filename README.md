@@ -1,7 +1,9 @@
-# Tauri + SvelteKit + TypeScript
+# Discord Custom RPC
+디스코드 커스텀 활동 표시 클라이언트
 
-This template should help get you started developing with Tauri, SvelteKit and TypeScript in Vite.
+### 사용한 기술
+- Tauri 
+- SvelteKit
+- TypeScript
 
-## Recommended IDE Setup
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).

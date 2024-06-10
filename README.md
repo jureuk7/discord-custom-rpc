@@ -5,5 +5,6 @@
 - Tauri 
 - SvelteKit
 - TypeScript
-
+- Rust
+- discord_rpc_client
 
